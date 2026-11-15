@@ -1,0 +1,33 @@
+{
+ "type": "hands_pick",
+ "result": "SUCCESS",
+ "shape": "egg",
+ "start_unix": 1794706320.2995756,
+ "time_s": 22.6,
+ "time_to_touch_s": 11.42,
+ "time_to_lift_s": 20.6,
+ "hands": [
+  "right"
+ ],
+ "assisted": false,
+ "broken": false,
+ "egg_break_n": 30.0,
+ "peak_grip_n": 18.74,
+ "drops": 0,
+ "max_height_cm": 9.1,
+ "params": {
+  "force_cap_n": 10.0,
+  "angle_limit_pct": 100.0,
+  "scale": {
+   "left": 1.0,
+   "right": 1.0
+  },
+  "rot_on": true,
+  "pick": {
+   "lift_m": 0.05,
+   "hold_s": 2.0,
+   "touch_n": 0.05,
+   "drop_lift_m": 0.02
+  }
+ }
+}

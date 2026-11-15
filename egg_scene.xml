@@ -1,0 +1,38 @@
+<mujoco model="steady_hands_egg">
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" impratio="10"/>
+  <default>
+    <geom condim="4" friction="1 0.02 0.001" solref="0.004 1" solimp="0.95 0.99 0.001"/>
+  </default>
+  <worldbody>
+    <light pos="0.5 0 2"/>
+    <geom name="floor" type="plane" size="2 2 0.1" rgba="0.9 0.9 0.9 1"/>
+    <geom name="table" type="box" pos="0.5 0 0.2" size="0.3 0.4 0.2" rgba="0.6 0.5 0.4 1"/>
+    <site name="target" type="cylinder" pos="0.5 0.2 0.401" size="0.03 0.001" rgba="0 0.8 0 0.5"/>
+    <body name="egg" pos="0.5 -0.1 0.4225">
+      <freejoint name="egg"/>
+      <geom name="egg" type="ellipsoid" size="0.022 0.029 0.022" mass="0.06" condim="6" friction="1 0.02 0.005" rgba="1 0.95 0.85 1"/>
+    </body>
+    <body name="hand_target" mocap="true" pos="0.5 -0.1 0.62">
+      <site name="hand_target" type="sphere" size="0.008" rgba="1 0 0 0.4"/>
+    </body>
+    <body name="gripper" pos="0.5 -0.1 0.62" gravcomp="1">
+      <freejoint name="gripper"/>
+      <geom name="palm" type="box" size="0.06 0.02 0.01" mass="0.4" rgba="0.3 0.3 0.35 1"/>
+      <body name="finger_l" pos="-0.045 0 -0.04" gravcomp="1">
+        <joint name="finger_l" type="slide" axis="1 0 0" range="0 0.04" damping="20"/>
+        <geom name="pad_l" type="box" size="0.005 0.015 0.03" mass="0.05" rgba="0.2 0.2 0.2 1"/>
+      </body>
+      <body name="finger_r" pos="0.045 0 -0.04" gravcomp="1">
+        <joint name="finger_r" type="slide" axis="-1 0 0" range="0 0.04" damping="20"/>
+        <geom name="pad_r" type="box" size="0.005 0.015 0.03" mass="0.05" rgba="0.2 0.2 0.2 1"/>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <weld name="hand_weld" body1="hand_target" body2="gripper" solref="0.01 1"/>
+  </equality>
+  <actuator>
+    <position name="act_l" joint="finger_l" kp="3000" ctrlrange="0 0.04" forcerange="-60 60"/>
+    <position name="act_r" joint="finger_r" kp="3000" ctrlrange="0 0.04" forcerange="-60 60"/>
+  </actuator>
+</mujoco>

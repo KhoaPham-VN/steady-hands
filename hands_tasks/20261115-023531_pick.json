@@ -1,0 +1,31 @@
+{
+ "type": "hands_pick",
+ "result": "fell off the table",
+ "shape": "can",
+ "start_unix": 1794702925.2845097,
+ "time_s": 6.51,
+ "time_to_touch_s": 4.97,
+ "time_to_lift_s": null,
+ "hands": [
+  "right"
+ ],
+ "assisted": false,
+ "peak_grip_n": 1.25,
+ "drops": 1,
+ "max_height_cm": 0.0,
+ "params": {
+  "force_cap_n": 10.0,
+  "angle_limit_pct": 100.0,
+  "scale": {
+   "left": 1.0,
+   "right": 1.0
+  },
+  "rot_on": true,
+  "pick": {
+   "lift_m": 0.05,
+   "hold_s": 2.0,
+   "touch_n": 0.05,
+   "drop_lift_m": 0.02
+  }
+ }
+}

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Organizers' recording (Rokoko's data, not ours to publish) and files derived from it
+data/*.csv
+data/replay_overview.png
+docs/organizers_replay.jsonl
+
+# Internal working notes (contain server addresses and device IDs)
+TONG_KET_ROKOKO.md
+PLAN_STEADY_HANDS.md
+
+# Dropped "tiny policy" direction (needs Isaac Lab; not part of Steady Hands)
+tiny_policy.zip
+record_glove_demos.py
+
+# Local recordings and reports
+*.jsonl
+trials/
+results.md
+results.csv
+results_trials.csv
+pinch_calib.json
